@@ -1,0 +1,42 @@
+<!---
+Frontend részben nincs nagyon tapasztalatom, ezt egy ismerős ajánlásával tettem össze a hirdetés listák lekérdezésére és hirdetés hozzáadására az adatbázishoz
+--->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Homepage</title>
+
+</head>
+<body>
+<div id="container">
+  <h3>List of Advertisements</h3>
+  <table border="1px">
+    <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr v-for="ad in ads" :key="ads.title">
+      <td>{{ad.title}}</td>
+      <td>{{ad.description}}</td>
+    </tr>
+    </tbody>
+  </table>
+  <h3 class="form--heading">Advertisement Details</h3>
+  <label>Title</label>
+  <input v-model="title" placeholder="title"/><br />
+  <label>Description</label>
+  <textarea v-model="description" placeholder="Write description here"></textarea
+  >
+  <br />
+  <button @click="addNew">Create Advertisement</button>
+</div>
+<script src="https://unpkg.com/vue@next"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="dataWork.js"  type="text/javascript"></script>
+</body>
+
+</html>
